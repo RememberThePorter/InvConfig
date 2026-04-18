@@ -1,0 +1,32 @@
+package remembertheporter.invconfig.network.packets;
+
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.network.NetworkEvent;
+import remembertheporter.invconfig.client.ClientSafeUtils;
+import remembertheporter.invconfig.world.inventory.SlotUtils;
+
+import java.util.function.Supplier;
+
+public class FixClientContainerPacket {
+    public FixClientContainerPacket() {
+    }
+    public static void encode(FixClientContainerPacket msg, FriendlyByteBuf buf) {
+    }
+
+    public static FixClientContainerPacket decode(FriendlyByteBuf buf) {
+        return new FixClientContainerPacket();
+    }
+
+    public static class Handler {
+
+        public static void handle(FixClientContainerPacket msg, Supplier<NetworkEvent.Context> ctx) {
+            ctx.get().enqueueWork(() -> {
+                Player player = ClientSafeUtils.getPlayer();
+                SlotUtils.fixContainer(player.inventoryMenu, player);
+                SlotUtils.fixContainer(player.containerMenu, player);
+            });
+            ctx.get().setPacketHandled(true);
+        }
+    }
+}
