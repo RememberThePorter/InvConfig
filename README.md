@@ -22,4 +22,4 @@ InvConfig is directly forked from [Nuparu00](https://github.com/Nuparu00/TinyInv
 
 # Bug reporting, feature requests, and port requests
 You can [open an issue](https://github.com/RememberThePorter/InvConfig/issues) to report bugs, request features, or request ports to other versions.
-InvConfig is currently made for 1.20.1, but should work on all 1.20.x versions. If you encounter any issues, please open an issue.
+InvConfig is currently made for 1.20.1, but should work on all 1.20.*x* versions. If you encounter any issues, please open an issue.
