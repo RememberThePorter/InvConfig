@@ -204,7 +204,7 @@ processResources {
 
 mixin {
     // MixinGradle Settings
-    add sourceSets.main, 'mixins.invconfig.refmap.json'
+    add sourceSets.main, 'mixins.tinyinv.refmap.json'
     config 'mixins.invconfig.json'
 
     debug.verbose = true
